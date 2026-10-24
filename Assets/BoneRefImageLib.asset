@@ -16,4 +16,14 @@ MonoBehaviour:
   m_GuidHigh: 12677018397942682521
   m_DataStore:
     m_Storage: []
-  m_Images: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5704396235513649642
+      m_GuidHigh: 7879498838864444833
+    m_SerializedTextureGuid:
+      m_GuidLow: 17119527520108073891
+      m_GuidHigh: 16176161812522407835
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: markrr
+    m_Texture: {fileID: 0}

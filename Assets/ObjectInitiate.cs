@@ -6,33 +6,57 @@ using Oculus.Interaction.Grab;
 using Oculus.Interaction.HandGrab;
 using TMPro;
 
-public class ModelTestComponents : MonoBehaviour
+public class ObjectInitiate : MonoBehaviour
 {
     [SerializeField] private GameObject handAndGrabPrefab;
     [SerializeField] private GameObject pokeInteractionPrefab;
     [SerializeField] private TMP_Text feedbackText;
+    [SerializeField] private Color highlightColor = Color.yellow;
+    [SerializeField] private Canvas canvas;
+   // [SerializeField] private BoneObjectController boneObjectController;
     
     void Start()
     {
         Initialize();
     }
 
-    private void Initialize()
+    private void CorrectName(Transform bone)
     {
-                if (handAndGrabPrefab == null)
-        {
-            Debug.LogError("Assign the Hand and Grab prefab in the Inspector.", this);
-            return;
-        }
-
-        foreach (Transform bone in transform)
-        {
-            if (bone.gameObject.name.Contains(".r"))
+        if (bone.gameObject.name.Contains(".r"))
             {
                 Debug.Log("It is a right bone so lets change the name for a readable name");
                 string name = bone.gameObject.name.Split('.')[0];
                 bone.gameObject.name = "Right " + name;
             }
+            else if (bone.gameObject.name.Contains(".l"))
+            {
+                Debug.Log("It is a left bone so lets change the name for a readable name");
+                string name = bone.gameObject.name.Split('.')[0];
+                bone.gameObject.name = "Left " + name;
+            }
+    }
+
+    private void Initialize()
+    {
+
+        if (handAndGrabPrefab == null)
+        {
+            Debug.LogError("Assign the Hand and Grab prefab in the Inspector.", this);
+            return;
+        }
+
+
+
+        foreach (Transform bone in transform)
+        {
+            BoneObjectController boneController = bone.GetComponent<BoneObjectController>();
+            if (boneController == null)
+            {
+                Debug.LogError($"Bone '{bone.name}' needs a BoneObjectController component.", bone);
+                continue;
+            }
+            boneController.SetBoneRenderer(bone.GetComponent<Renderer>());
+            CorrectName(bone);
             Rigidbody rb = bone.GetComponent<Rigidbody>();
             if (rb == null)
             {
@@ -53,26 +77,19 @@ public class ModelTestComponents : MonoBehaviour
             instantiatedObject.GetComponent<HandGrabInteractable>().InjectOptionalPointableElement(grabbable);
             instantiatedObject.GetComponent<HandGrabInteractable>().WhenPointerEventRaised += (args) =>
             {
-    
-               // Debug.Log($"Bone '{bone.name}' pointer event: {args.Type}.", bone);
                 if (args.Type == PointerEventType.Select)
                 {
-                    Debug.Log($"Bone '{bone.name}' was grabbed.", bone);
-                    feedbackText.text = $"'{bone.name}'";
-                    bone.GetComponent<Renderer>().material.color = Color.yellow;
+                    boneController.SetColor(highlightColor);
+                    UiInstance.instance.nameField.text = $"{bone.name}";
                 }
                 else if (args.Type == PointerEventType.Unselect)
                 {
                     Debug.Log($"Bone '{bone.name}' was released.", bone);
-                    feedbackText.text = "";
-                    bone.GetComponent<Renderer>().material.color = Color.white;
+                    UiInstance.instance.nameField.text = "";
+                    boneController.SetColor(Color.white);
                 }
-                
             };
-
         }
     }
-
-
 
 }
