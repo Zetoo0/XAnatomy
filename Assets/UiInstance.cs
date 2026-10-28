@@ -11,4 +11,5 @@ public class UiInstance : MonoBehaviour
     }
 
     public TMPro.TMP_Text nameField;
+    public Vector3 selectedObjectCurrentPosition;
 }

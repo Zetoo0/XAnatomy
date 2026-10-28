@@ -80,13 +80,16 @@ public class ObjectInitiate : MonoBehaviour
                 if (args.Type == PointerEventType.Select)
                 {
                     boneController.SetColor(highlightColor);
-                    UiInstance.instance.nameField.text = $"{bone.name}";
+                    UiInstance.instance.nameField.text = $"{bone.name}";    
                 }
                 else if (args.Type == PointerEventType.Unselect)
                 {
                     Debug.Log($"Bone '{bone.name}' was released.", bone);
                     UiInstance.instance.nameField.text = "";
                     boneController.SetColor(Color.white);
+                    boneController.SetObjectUnselectedPosition(boneController.transform.position);
+                    boneController.ChangeObjectGrabAndNotInPlace(true);//we set it to true
+                    boneController.CheckIfChangedPosIsNearEnough();
                 }
             };
         }
