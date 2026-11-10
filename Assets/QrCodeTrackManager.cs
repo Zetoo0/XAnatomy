@@ -8,11 +8,12 @@ public class QrCodeTrackManager : MonoBehaviour
 
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject[] arrayOfSpawnableObject;
+    [SerializeField] TeachManager teachObj;
     public string spawnObjectName;
     private bool isThereSpawnedObject = false;
    public void OnTrackableAdded(MRUKTrackable trackable)
     {
-        Debug.Log($"Hell yeah tracked the kuár kód: {trackable.TrackableType}");
+        Debug.Log($"Oh yeah tracked the qr code: {trackable.TrackableType}");
         if (trackable.TrackableType.Equals(OVRAnchor.TrackableType.QRCode))
         {
             Debug.Log("Its a QR code");
@@ -20,9 +21,9 @@ public class QrCodeTrackManager : MonoBehaviour
             {
                 Debug.Log("Lets spawn an object");
                 Instantiate(skeleton, this.transform);
+                teachObj.SetObjectInitiate();
                 isThereSpawnedObject = true;
             }
-         //   Instantiate(skeleton);
         }
     }
 

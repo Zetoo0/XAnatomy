@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1841707601095934695, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2724043784387725727, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
       propertyPath: _rigidbody
@@ -77,6 +77,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
+--- !u!1 &604600555199585388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1841707601095934695, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
+  m_PrefabInstance: {fileID: 1291678009171451531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7303092862589831095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8409691709251950908, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
@@ -158,9 +163,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5222477376221683326}
-    - targetCorrespondingSourceObject: {fileID: -5988971838916165696, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1966775282580462899}
+      addedObject: {fileID: 5285405715278083088}
     - targetCorrespondingSourceObject: {fileID: 4856520506985954167, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8449576367693551577}
@@ -707,9 +712,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4707510935363257472, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6819343384726566212}
-    - targetCorrespondingSourceObject: {fileID: 6671854254390436750, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5400009279299835862}
     - targetCorrespondingSourceObject: {fileID: 7847429542288547632, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3446611115758575532}
@@ -2180,9 +2182,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3788702756578333522, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5159917978335261255}
-    - targetCorrespondingSourceObject: {fileID: -4292511347113055617, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6701831688309528631}
     - targetCorrespondingSourceObject: {fileID: -8000735024358888792, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4742129169567905705}
@@ -3504,27 +3503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f70b8e248426604bb08ed04e465b29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneObjectController
---- !u!1 &287830374626140943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5988971838916165696, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
-  m_PrefabInstance: {fileID: 3394713445491137743}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1966775282580462899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287830374626140943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e61b72d90728a48b4683b83968d642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ModelTestComponents
-  handAndGrabPrefab: {fileID: 1841707601095934695, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
-  pokeInteractionPrefab: {fileID: 0}
-  feedbackText: {fileID: 0}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &394393636193994810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3054948014905447669, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
@@ -13457,6 +13435,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.40967846, y: 1.6959682, z: 0.25419396}
   m_Center: {x: 0.13068533, y: 0.85712534, z: 0.009963483}
+--- !u!114 &5285405715278083088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584248378916397470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e61b72d90728a48b4683b83968d642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectInitiate
+  handAndGrabPrefab: {fileID: 604600555199585388}
+  pokeInteractionPrefab: {fileID: 0}
+  feedbackText: {fileID: 0}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  canvas: {fileID: 0}
+  teachObj: {fileID: 0}
 --- !u!1 &2590602357373261637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 932204418809990026, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
@@ -31485,27 +31481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f70b8e248426604bb08ed04e465b29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneObjectController
---- !u!1 &7742143269190235824 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -4292511347113055617, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
-  m_PrefabInstance: {fileID: 3394713445491137743}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6701831688309528631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7742143269190235824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e61b72d90728a48b4683b83968d642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ModelTestComponents
-  handAndGrabPrefab: {fileID: 1841707601095934695, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
-  pokeInteractionPrefab: {fileID: 0}
-  feedbackText: {fileID: 0}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &7760943924717305942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4947231153703459993, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
@@ -33515,27 +33490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f70b8e248426604bb08ed04e465b29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneObjectController
---- !u!1 &8325820890514407233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6671854254390436750, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
-  m_PrefabInstance: {fileID: 3394713445491137743}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5400009279299835862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8325820890514407233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e61b72d90728a48b4683b83968d642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ModelTestComponents
-  handAndGrabPrefab: {fileID: 1841707601095934695, guid: da583fc4fe68477488a9dd6bfed2a8ec, type: 3}
-  pokeInteractionPrefab: {fileID: 0}
-  feedbackText: {fileID: 0}
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &8362185768428924208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2661624895779786241, guid: 0d5c89ee05706060b9ca96cec62702e7, type: 3}
